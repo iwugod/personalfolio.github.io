@@ -1,0 +1,105 @@
+@import './src/_mixins.scss';
+@import 'styles.scss';
+
+.contact-wrapper {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 50vh;
+    /* Begin Left Contact Page */
+    .form-horizontal {
+        text-align: center;
+        position: relative;
+        .form-group {
+            margin: 30px 0;
+        }
+        .form-control,
+        textarea {
+            width: 100%;
+            color: #111;
+            letter-spacing: 1px;
+            padding: 20px;
+        }
+        .btn-wrap {
+            text-align: left;
+            .send-button {
+                height: 50px;
+                width: 200px;
+                overflow: hidden;
+                transition: all .2s ease-in-out;
+                margin: 30px 0;
+            }
+            .button {
+                transition: all .2s ease-in-out;
+                &:hover {
+                    transform: translate3d(0px, -35px, 0px);
+                }
+            }
+        }
+        .send-text {
+            display: block;
+            margin-top: 10px;
+            letter-spacing: 4px;
+        }
+    }
+}
+
+.direct-contact-container {
+    position: relative;
+    .contact-list {
+        list-style-type: none;
+        padding: 30px;
+        @include  respond-to(mobile){
+          padding:0;
+        }
+    }
+    .list-item {
+        line-height: 4;
+        color: #aaa;
+         @include  respond-to(mobile){
+           font-size: 12px;
+           line-height: 3em;
+           //text-align: center;
+           display: block;
+         }
+    }
+    .contact-text {
+        letter-spacing: 1.9px;
+        color: #bbb;
+        a {
+            color: #bbb;
+            text-decoration: none;
+            transition-duration: 0.2s;
+            &:hover {
+                color: $txt-hover;
+                text-decoration: none;
+            }
+        }
+        &.place {
+            margin-left: 62px;
+        }
+        &.phone {
+            margin-left: 56px;
+        }
+        &.gmail {
+            margin-left: 53px;
+        }
+
+        @include  respond-to(mobile){
+           letter-spacing: 0.9px;
+           &.place {
+                margin-left: 5px;
+            }
+            &.phone {
+                margin-left:  5px;
+            }
+            &.gmail {
+                margin-left: 5px;
+            }
+        }
+    }
+}
